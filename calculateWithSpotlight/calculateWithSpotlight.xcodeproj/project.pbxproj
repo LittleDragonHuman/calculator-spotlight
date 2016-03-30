@@ -15,6 +15,7 @@
 		14F794951CABA1C800BF5809 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F794931CABA1C800BF5809 /* LaunchScreen.storyboard */; };
 		14F794A01CABA1C900BF5809 /* calculateWithSpotlightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F7949F1CABA1C800BF5809 /* calculateWithSpotlightTests.m */; };
 		14F794AB1CABA1C900BF5809 /* calculateWithSpotlightUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F794AA1CABA1C900BF5809 /* calculateWithSpotlightUITests.m */; };
+		14F794B91CABD90200BF5809 /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F794B81CABD90200BF5809 /* CoreSpotlight.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		14F794A61CABA1C900BF5809 /* calculateWithSpotlightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calculateWithSpotlightUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F794AA1CABA1C900BF5809 /* calculateWithSpotlightUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = calculateWithSpotlightUITests.m; sourceTree = "<group>"; };
 		14F794AC1CABA1C900BF5809 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14F794B81CABD90200BF5809 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F794B91CABD90200BF5809 /* CoreSpotlight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 		14F794791CABA1C800BF5809 = {
 			isa = PBXGroup;
 			children = (
+				14F794B81CABD90200BF5809 /* CoreSpotlight.framework */,
 				14F794841CABA1C800BF5809 /* calculateWithSpotlight */,
 				14F7949E1CABA1C800BF5809 /* calculateWithSpotlightTests */,
 				14F794A91CABA1C900BF5809 /* calculateWithSpotlightUITests */,
@@ -495,6 +499,7 @@
 				14F794B11CABA1C900BF5809 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14F794B21CABA1C900BF5809 /* Build configuration list for PBXNativeTarget "calculateWithSpotlightTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +508,7 @@
 				14F794B41CABA1C900BF5809 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14F794B51CABA1C900BF5809 /* Build configuration list for PBXNativeTarget "calculateWithSpotlightUITests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +517,7 @@
 				14F794B71CABA1C900BF5809 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

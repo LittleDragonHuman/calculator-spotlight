@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <CoreSpotlight/CoreSpotlight.h>
 
 typedef NS_ENUM(NSInteger, OperatorStyle)
 {
@@ -30,6 +31,7 @@ typedef NS_ENUM(NSInteger, OperatorStyle)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self saveSpotlightData];
     self.numArray = [[NSMutableArray alloc] init];
     self.operatorArray = [[NSMutableArray alloc] init];
     [self updateResultLabel:[NSString stringWithFormat:@"%@",@(0)]];
@@ -117,6 +119,31 @@ typedef NS_ENUM(NSInteger, OperatorStyle)
         default:
             break;
     }
+}
+
+- (void)saveSpotlightData
+{
+    NSArray *operators = @[@"+",@"-",@"*",@"/",@"%",@"="];
+    NSArray *descs = @[@"1+2",@"4-2",@"5*1",@"6/3",@"8%6",@"2=2"];
+    NSMutableArray *items = [NSMutableArray array];
+    for (NSInteger index = 0; index < operators.count; index++) {
+        CSSearchableItemAttributeSet *attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:@"operators"];
+        attributeSet.title = operators[index];
+        attributeSet.contentDescription = descs[index];
+        attributeSet.keywords = @[operators[index],descs[index]];
+        
+        CSSearchableItem *item = [[CSSearchableItem alloc] initWithUniqueIdentifier:operators[index] domainIdentifier:@"calculateWithSpotlight" attributeSet:attributeSet];
+        item.expirationDate = nil;
+        [items addObject:item];
+    }
+    [[CSSearchableIndex defaultSearchableIndex] indexSearchableItems:items completionHandler:^(NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"error");
+        }
+        else {
+            NSLog(@"success");
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
