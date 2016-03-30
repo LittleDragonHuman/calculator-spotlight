@@ -45,15 +45,15 @@ typedef NS_ENUM(NSInteger, OperatorStyle)
 - (IBAction)operatorClick:(id)sender
 {
     [self.numArray addObject:@(self.tmpInput)];
+    UIButton *btn = (UIButton *)sender;
     if (self.numArray.count == 2 && self.operatorArray.count == 1) {
         [self showUpTmpRes];
     }
     else {
         [self updateResultLabel:[NSString stringWithFormat:@"%@",@(self.tmpInput)]];
-        UIButton *btn = (UIButton *)sender;
-        [self.operatorArray addObject:@(btn.tag)];
         self.tmpInput = 0;
     }
+    [self.operatorArray addObject:@(btn.tag)];
 }
 
 - (IBAction)resultClick:(id)sender
@@ -82,6 +82,7 @@ typedef NS_ENUM(NSInteger, OperatorStyle)
     [self.numArray removeAllObjects];
     [self.numArray addObject:@(tmpRes)];
     [self.operatorArray removeAllObjects];
+    self.tmpInput = 0;
 }
 
 - (void)updateResultLabel:(NSString *)res
