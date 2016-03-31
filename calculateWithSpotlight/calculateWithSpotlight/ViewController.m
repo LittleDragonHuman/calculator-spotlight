@@ -123,6 +123,9 @@ typedef NS_ENUM(NSInteger, OperatorStyle)
 
 - (void)saveSpotlightData
 {
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 9.0) {
+        return;
+    }
     NSArray *operators = @[@"+",@"-",@"*",@"/",@"%",@"="];
     NSArray *descs = @[@"1+2",@"4-2",@"5*1",@"6/3",@"8%6",@"2=2"];
     NSMutableArray *items = [NSMutableArray array];
